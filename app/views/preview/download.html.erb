@@ -1,0 +1,6 @@
+<div class="jumbotron container">
+	<%= link_to download_path(@resource.class.name.underscore, @resource.id) do %>
+		<i class="glyphicon glyphicon-download"></i><%= @resource.name %>
+	<% end %>
+	[<%= @resource.content_type %>]
+</div>

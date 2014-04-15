@@ -1,0 +1,122 @@
+iso:  application/x-iso9660-image
+
+doc:  application/msword
+dot:  application/msword
+dot:  application/msword
+docx: application/msword
+dot:  application/msword
+xls:  application/vnd.ms-excel
+xlt:  application/vnd.ms-excel
+xla:  application/vnd.ms-excel
+xlsx: application/vnd.ms-excel
+ppt:  application/vnd.ms-powerpoint
+pot:  application/vnd.ms-powerpoint
+pps:  application/vnd.ms-powerpoint
+ppa:  application/vnd.ms-powerpoint
+pptx: application/vnd.ms-powerpoint
+
+key:  application/vnd.apple.keynote
+keynode:  application/vnd.apple.keynote
+pages:  application/vnd.apple.pages
+numbers:  application/vnd.apple.numbers
+
+xmind:  application/vnd.xmind.workbook
+graffle:  application/x-omnigraffle
+
+rar:  application/x-rar-compressed
+exe:  application/x-msdownload
+bat:  application/x-msdownload
+dll:  application/x-msdownload
+com:  application/x-msdownload
+msi:  application/x-msdownload
+
+bin:  application/octet-stream
+dms:	application/octet-stream
+lrf:	application/octet-stream
+mar:	application/octet-stream
+so:	  application/octet-stream
+dist:	application/octet-stream
+distz:  application/octet-stream
+pkg:	application/octet-stream
+bpk:	application/octet-stream
+dump:	application/octet-stream
+elc:	application/octet-stream
+deploy: application/octet-stream
+
+epub: application/epub+zip				
+
+sh:   application/x-sh
+csh:  application/x-csh
+
+jar:  application/java-archive	
+sar:  application/java-archive	
+war:  application/java-archive	
+ear:  application/java-archive	
+ser:  application/java-serialized-object	
+class:  application/x-java-class		
+jad:  text/vnd.sun.j2me.app-descriptor	
+
+opml: text/x-opml
+nfo:  text/x-nfo
+vcs:  text/x-vcalendar
+vcf:  text/x-vcard
+
+yml: text/x-yaml
+yaml: text/x-yaml
+properties: text/x-properties
+asm:  text/x-asm
+s:    text/x-asm
+c:    text/x-c
+cc:   text/x-c
+cxx:  text/x-c
+cpp:  text/x-c
+h:    text/x-c
+hh:   text/x-c
+dic:  text/x-c
+f:    text/x-fortran
+for:  text/x-fortran
+f77:  text/x-fortran
+f90:  text/x-fortran
+java: text/x-java
+p:    text/x-pascal
+pas:  text/x-pascal
+rb:   text/x-ruby
+rake: text/x-ruby
+ru:   text/x-ruby
+py:   text/x-python	
+
+htm:  text/html
+text: text/plain
+conf: text/plain
+def:  text/plain 
+list: text/plain
+log:  text/plain
+in:   text/plain
+
+mp4:  video/mp4	
+mp4v: video/mp4	
+mpg4: video/mp4	
+mpeg: video/mpeg
+mpg:  video/mpeg	
+mpe:  video/mpeg	
+m1v:  video/mpeg	
+m2v:  video/mpeg	
+webm: video/webm					
+f4v:  video/x-f4v					
+fli:  video/x-fli					
+flv:  video/x-flv					
+m4v:  video/x-m4v					
+mkv:  video/x-matroska	
+mk3d: video/x-matroska
+mks:  video/x-matroska
+mng:  video/x-mng					
+asf:  video/x-ms-asf
+asx:  video/x-ms-asf					 
+vob:  video/x-ms-vob					
+wm:   video/x-ms-wm					
+wmv:  video/x-ms-wmv					
+wmx:  video/x-ms-wmx					
+wvx:  video/x-ms-wvx					
+avi:  video/x-msvideo					
+movie:  video/x-sgi-movie				
+smv:  video/x-smv
