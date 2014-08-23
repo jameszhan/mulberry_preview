@@ -1,5 +1,8 @@
 iso:  application/x-iso9660-image
 
+vdx:  application/x-visio
+vsd:  application/x-visio
+rtf:  application/x-rtf
 doc:  application/msword
 dot:  application/msword
 dot:  application/msword
@@ -27,6 +30,12 @@ numbers:  application/vnd.apple.numbers
 xmind:  application/vnd.xmind.workbook
 graffle:  application/x-omnigraffle
 
+bz2:  application/x-bzip2
+tar:  application/x-tar
+gz:   application/x-gzip
+tgz:  application/x-gtar
+tbz2: application/x-gtar
+tbz:  application/x-gtar
 rar:  application/x-rar-compressed
 exe:  application/x-msdownload
 bat:  application/x-msdownload
@@ -38,11 +47,11 @@ swf:  application/x-shockwave-flash
 rm:   application/vnd.rn-realmedia
 rmvb: application/vnd.rn-realmedia
 
-bin:  application/octet-stream
+bin:    application/octet-stream
 dms:	application/octet-stream
 lrf:	application/octet-stream
 mar:	application/octet-stream
-so:	  application/octet-stream
+so:	    application/octet-stream
 dist:	application/octet-stream
 distz:  application/octet-stream
 pkg:	application/octet-stream
@@ -50,6 +59,7 @@ bpk:	application/octet-stream
 dump:	application/octet-stream
 elc:	application/octet-stream
 deploy: application/octet-stream
+dat:    application/octet-stream
 
 epub: application/epub+zip
 mobi: application/x-mobi
@@ -85,6 +95,8 @@ cpp:  text/x-c
 h:    text/x-c
 hh:   text/x-c
 dic:  text/x-c
+yacc: text/x-c
+y:    text/x-c
 f:    text/x-fortran
 for:  text/x-fortran
 f77:  text/x-fortran
@@ -96,12 +108,17 @@ rb:   text/x-ruby
 rake: text/x-ruby
 ru:   text/x-ruby
 py:   text/x-python
+lua:  text/x-lua
+sql:  text/x-sql
 
 md: text/x-markdown
 markdown: text/x-markdown
 ftl: text/x-freemarker
 vm: text/x-velocity
 
+xsd:  text/xml
+xsl:  text/xml
+jsp:  text/html
 htm:  text/html
 text: text/plain
 conf: text/plain
@@ -111,11 +128,17 @@ log:  text/plain
 ini:  text/plain
 m:    text/plain
 plist: text/plain
+handlers: text/plain
+schemas:  text/plain
+index:  text/plain
+
+psd:  image/vnd.adobe.photoshop
 
 mp3:  audio/mpeg3
 midi: audio/midi
 wma:  audio/x-ms-wma
 
+3gp:  video/3gpp
 mp4:  video/mp4	
 mp4v: video/mp4	
 mpg4: video/mp4	
@@ -145,3 +168,4 @@ smv:  video/x-smv
 movie:  video/x-sgi-movie
 mov:  video/quicktime
 moov: video/quicktime
+wrf:  video/x-wrf
