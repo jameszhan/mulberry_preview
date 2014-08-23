@@ -60,6 +60,7 @@ dump:	application/octet-stream
 elc:	application/octet-stream
 deploy: application/octet-stream
 dat:    application/octet-stream
+fla:    application/octet-stream
 
 epub: application/epub+zip
 mobi: application/x-mobi
@@ -118,8 +119,10 @@ vm: text/x-velocity
 
 xsd:  text/xml
 xsl:  text/xml
+tld:  text/xml
 jsp:  text/html
 htm:  text/html
+mht:  text/html
 text: text/plain
 conf: text/plain
 def:  text/plain 
@@ -132,6 +135,7 @@ handlers: text/plain
 schemas:  text/plain
 index:  text/plain
 
+ico:  image/x-icon
 psd:  image/vnd.adobe.photoshop
 
 mp3:  audio/mpeg3
