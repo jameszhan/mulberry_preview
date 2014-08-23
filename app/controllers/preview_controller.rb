@@ -48,9 +48,9 @@ class PreviewController < ActionController::Base
   private
     def open_osx_file
       path = params[:path]
-      app = "Preview"
+      app = 'Preview'
       if /^text\/.+$/ =~ params[:mime]
-        app = "TextMate"
+        app = 'TextMate'
       end
       system %Q{open -a #{app} "#{path}"}
     end
