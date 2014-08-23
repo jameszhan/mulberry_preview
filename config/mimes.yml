@@ -138,7 +138,6 @@ mp3:  audio/mpeg3
 midi: audio/midi
 wma:  audio/x-ms-wma
 
-3gp:  video/3gpp
 mp4:  video/mp4	
 mp4v: video/mp4	
 mpg4: video/mp4	
