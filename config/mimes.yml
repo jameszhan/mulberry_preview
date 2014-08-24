@@ -26,6 +26,7 @@ key:  application/vnd.apple.keynote
 keynode:  application/vnd.apple.keynote
 pages:  application/vnd.apple.pages
 numbers:  application/vnd.apple.numbers
+app:  application/vnd.apple.app
 
 xmind:  application/vnd.xmind.workbook
 graffle:  application/x-omnigraffle
