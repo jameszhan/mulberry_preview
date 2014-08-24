@@ -30,6 +30,7 @@ app:  application/vnd.apple.app
 
 xmind:  application/vnd.xmind.workbook
 graffle:  application/x-omnigraffle
+gstencil: application/x-omnigraffle
 
 bz2:  application/x-bzip2
 tar:  application/x-tar
@@ -109,18 +110,41 @@ pas:  text/x-pascal
 rb:   text/x-ruby
 rake: text/x-ruby
 ru:   text/x-ruby
+builder: text/x-ruby
+jbuilder: text/x-ruby
+gemspec: text/x-ruby
 py:   text/x-python
 lua:  text/x-lua
 sql:  text/x-sql
+pl:   text/x-perl
+perl: text/x-perl
+go:   text/x-go
+php:  text/x-php
+asp:  text/x-asp
+aspx: text/x-aspx
+cljs: text/x-clojure
+clj:  text/x-clojure
+coffee: text/x-coffeescript
+slim: text/x-slim
+haml: text/x-haml
+groovy: text/x-groovy
 
+js: text/javascript
+css: text/css
+scss: text/css
+sass: text/css
 md: text/x-markdown
 markdown: text/x-markdown
 ftl: text/x-freemarker
 vm: text/x-velocity
 
 xsd:  text/xml
+xslt: text/xml
 xsl:  text/xml
 tld:  text/xml
+gsp:  text/html
+ejs:  text/html
+erb:  text/html
 jsp:  text/html
 htm:  text/html
 mht:  text/html
@@ -132,12 +156,17 @@ log:  text/plain
 ini:  text/plain
 m:    text/plain
 plist: text/plain
+rdoc: text/plain
+ngdoc:  text/plain
+dtd:  text/plain
 handlers: text/plain
 schemas:  text/plain
 index:  text/plain
 
 ico:  image/x-icon
 psd:  image/vnd.adobe.photoshop
+svg:  image/svg+xml
+svgz: image/svg+xml
 
 mp3:  audio/mpeg3
 midi: audio/midi
