@@ -4,8 +4,20 @@ module Markdown
     class HTML < Redcarpet::Render::HTML  #MdEmoji::Render
       def block_code(code, language)
         sha = Digest::SHA1.hexdigest(code)
-        Rails.cache.fetch ['code', language, sha].join('-') do
-          CodeRay.scan(code, language).div#(:line_numbers => :table)
+        lang = santize language
+        Rails.cache.fetch ['code', lang, sha].join('-') do
+          CodeRay.scan(code, lang).div#(:line_numbers => :table)
+        end
+      end
+
+      def santize(language)
+        language ||= :default
+        if CodeRay::Scanners.list.include?(language.to_sym)
+          language
+        elsif CodeRay::Scanners.plugin_hash.key?(language)
+          CodeRay::Scanners.plugin_hash[language]
+        else
+          :default
         end
       end
     end
