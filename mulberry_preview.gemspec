@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT', 'GPL-2']
 
   s.add_runtime_dependency 'rails', '~> 4.1', '>= 4.1.0'
+  s.add_runtime_dependency 'bootstrap-sass-rails'
 
-  s.add_development_dependency 'sqlite3', '~> 0'
+  #s.add_development_dependency 'sqlite3', '~> 0'
 end

@@ -1,27 +1,32 @@
 class PreviewController < ActionController::Base
 
   Languages = [:ruby, :python, :java, :js, :scss, :sass, :haml, :json, 
-    :go, :sql, :yaml, :c, :coffee, :properties]  
+    :go, :sql, :yaml, :c, :coffee, :properties, :clojure]
   
   def index
     clazz, id = params[:type].classify.constantize, params[:id] 
     r = clazz.find(id)
-    type, ext = r.content_type[/^[^\/]+/].to_sym, r.content_type[/(?<=\/)(x-)?(.+)/, 2].to_sym
-    if Languages.include?(ext)
-      @code = CodeRay.scan(r.content, ext).div(:line_numbers => :table, :css => :class)
-      render 'code', layout: 'coderay'
-    elsif [:pdf, :html].include?(ext)
-      render_native(r.content, r.content_type)
-    else
-      case type
-      when :text
-        render_native(r.content, 'text/plain')
-      when :image
-        render_native(r.content, r.content_type)
+    if r
+      mime = r.content_type
+      type, ext = mime[/^[^\/]+/].to_sym, mime[/(?<=\/)(x-)?(.+)/, 2].to_sym
+      if Languages.include?(ext)
+        @code = CodeRay.scan(r.content, ext).div(:line_numbers => :table, :css => :class)
+        render 'code', layout: 'coderay'
+      elsif [:pdf, :html].include?(ext)
+        render_native(r.content, mime)
       else
-        @resource = r
-        render 'download', layout: 'coderay'
+        case type
+        when :text
+          render_native(r.content, 'text/plain')
+        when :image, :video, :audio
+          render_native(r.content, mime)
+        else
+          @resource = r
+          render 'download', layout: 'coderay'
+        end
       end
+    else
+      render text: "#{r} or #{r.content_type} is not acceptable.", content_type: 'text/plain'
     end
   end
   
@@ -42,7 +47,11 @@ class PreviewController < ActionController::Base
   def download
     clazz, id = params[:type].classify.constantize, params[:id] 
     r = clazz.find(id)
-    render_native(r.content, r.content_type)
+    if r
+      render_native(r.content, r.content_type || 'application/octet-stream')
+    else
+      head :no_content
+    end
   end
   
   private
