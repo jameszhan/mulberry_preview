@@ -1,6 +1,6 @@
 class PreviewController < ActionController::Base
 
-  Languages = [:ruby, :python, :java, :js, :scss, :sass, :haml, :json, 
+  LANGUAGES = [:ruby, :python, :java, :js, :scss, :sass, :haml, :json,
     :go, :sql, :yaml, :c, :coffee, :properties, :clojure]
   
   def index
@@ -9,9 +9,11 @@ class PreviewController < ActionController::Base
     if r
       mime = r.content_type
       type, ext = mime[/^[^\/]+/].to_sym, mime[/(?<=\/)(x-)?(.+)/, 2].to_sym
-      if Languages.include?(ext)
+      if LANGUAGES.include?(ext)
         @code = CodeRay.scan(r.content, ext).div(:line_numbers => :table, :css => :class)
         render 'code', layout: 'coderay'
+      elsif :markdown == ext
+        render text: markdown(r.content), content_type: 'text/html'
       elsif [:pdf, :html].include?(ext)
         render_native(r.content, mime)
       else
@@ -55,6 +57,19 @@ class PreviewController < ActionController::Base
   end
   
   private
+    def markdown(content)
+      renderer = Markdown::Render::HTML.new(hard_wrap: true, filter_html: true)
+      options = {
+          autolink: true,
+          no_intra_emphasis: true,
+          fenced_code_blocks: true,
+          lax_html_blocks: true,
+          strikethrough: true,
+          superscript: true
+      }
+      Redcarpet::Markdown.new(renderer, options).render(content).html_safe
+    end
+
     def open_osx_file
       path = params[:path]
       app = 'Preview'

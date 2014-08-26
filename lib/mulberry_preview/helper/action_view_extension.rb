@@ -1,5 +1,5 @@
 module MulberryPreview
-  Languages = [:ruby, :python, :java, :js, :scss, :sass, :haml, :html, :json, :go, :sql, :yaml, :c, :coffee, :properties]
+  LANGUAGES = [:ruby, :python, :java, :js, :scss, :sass, :haml, :html, :json, :go, :sql, :yaml, :c, :coffee, :properties, :clojure]
 
   module ActionViewExtension
     def preview(r)
@@ -7,16 +7,20 @@ module MulberryPreview
       ext = r.content_type[/(?<=\/)(x-)?(.+)/, 2].to_sym
       case type
       when :text
-        if Languages.include?(ext)
+        if LANGUAGES.include?(ext)
           raw CodeRay.scan(r.content, ext).div(:line_numbers => :table, :css => :class)
         else
-          raw "<div class=\"code\">#{r.content}</div>"
-        end       
+          raw %{<div class="code">#{r.content}</div>}
+        end
+      when :audio
+        raw %{<audio src="#{preview_path(r.class, r.id)}" />}
+      when :video
+        raw %{<video src="#{preview_path(r.class, r.id)}" />}
       when :image
-        raw "<img src=\"#{preview_path(r.class, r.id)}\" class=\"img-thumbnail\" />"
+        raw %{<img src="#{preview_path(r.class, r.id)}" class="img-thumbnail" />}
       when :application
         if :pdf == ext
-          raw "<iframe src=\"#{preview_path(r.class, r.id)}\" width='860' height='800' border='0' style='border:none'></iframe>"
+          raw %{<iframe src="#{preview_path(r.class, r.id)}" width='860' height='800' border='0' style='border:none'></iframe>}
         else
           "#{r.content_type} => #{r}"
         end
